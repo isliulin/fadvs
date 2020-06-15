@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>FAD 9500</ProjectName>
+    <ProjectGuid>{10093099-4F0B-4C72-BD9C-DAFEFDCF5B04}</ProjectGuid>
+    <RootNamespace>TSCtrlSys</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EmbedManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\TSCtrlApp\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</EmbedManifest>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\FAD 9500</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>vn_bpp.exe</Command>
+    </PreBuildEvent>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/wd4430 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\mil\include;.\Imaging\include;.\vld\include;.\MvViewer\include;.\Basler\pylon\include;.\Basler\genicam\library\cpp\include;.\PointGrey\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4189;4819;4100;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <StringPooling>false</StringPooling>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalDependencies>mil.lib;milblob.lib;milim.lib;milmeas.lib;milpat.lib;milmod.lib;nafxcwd.lib;libcpmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\mil\lib;.\Imaging\win32;.\vld\lib;.\MvViewer\lib\win32;.\Basler\pylon\lib\Win32;.\Basler\genicam\library\cpp\lib\win32_i86;.\PointGrey\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>MSVCRT;MSVCR90;LIBCMT.lib;libcpmtd.lib;nafxcwd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command>vn_bpp.exe /release</Command>
+    </PreBuildEvent>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/D "_CRT_SECURE_NO_DEPRECATE"  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>E:\Source\2013.04.12-FAD9200DZ\FAD9200出机代码1-20\TSCtrlSys-Image--331\TSCtrlSys\Imaging\include;E:\Source\2013.04.12-FAD9200DZ\FAD9200出机代码1-20\TSCtrlSys-Image--331\TSCtrlSys\mil\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalLibraryDirectories>E:\Source\2013.04.12-FAD9200DZ\FAD9200出机代码1-20\TSCtrlSys-Image--331\TSCtrlSys\mil\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BaslerCamera.cpp" />
+    <ClCompile Include="CarmAVT.cpp" />
+    <ClCompile Include="CmdRun.cpp" />
+    <ClCompile Include="ColorButton.cpp" />
+    <ClCompile Include="ComPort.cpp" />
+    <ClCompile Include="convert.cpp" />
+    <ClCompile Include="DHCamera.cpp" />
+    <ClCompile Include="DlgAlignNeedle.cpp" />
+    <ClCompile Include="DlgAutoAlign.cpp" />
+    <ClCompile Include="DlgAutoNeedle.cpp" />
+    <ClCompile Include="DlgBlobSet.cpp" />
+    <ClCompile Include="DlgCameraAdj.cpp" />
+    <ClCompile Include="DlgCameraLaser.cpp" />
+    <ClCompile Include="DlgConfigure.cpp" />
+    <ClCompile Include="DlgCtrl.cpp" />
+    <ClCompile Include="DlgCustom.cpp" />
+    <ClCompile Include="DlgDebugHeight.cpp" />
+    <ClCompile Include="DlgDebugNeedle.cpp" />
+    <ClCompile Include="DlgDetectBase.cpp" />
+    <ClCompile Include="DlgDetectCalib.cpp" />
+    <ClCompile Include="DlgDownCam.cpp" />
+    <ClCompile Include="DlgHeight.cpp" />
+    <ClCompile Include="DlgHeightCalib.cpp" />
+    <ClCompile Include="DlgHeightPosition.cpp" />
+    <ClCompile Include="DlgImagePosition.cpp" />
+    <ClCompile Include="DlgIOCtrl.cpp" />
+    <ClCompile Include="DlgLabel.cpp" />
+    <ClCompile Include="DlgLogin.cpp" />
+    <ClCompile Include="DlgManualAlign.cpp" />
+    <ClCompile Include="DlgMarkSet.cpp" />
+    <ClCompile Include="DlgMaterialCode.cpp" />
+    <ClCompile Include="DlgNeedle.cpp" />
+    <ClCompile Include="DlgNeedleAdjust.cpp" />
+    <ClCompile Include="DlgNeedleCamera.cpp" />
+    <ClCompile Include="DlgNeedleOne.cpp" />
+    <ClCompile Include="DlgNeedleOneAdjust.cpp" />
+    <ClCompile Include="DlgNeedleThree.cpp" />
+    <ClCompile Include="DlgNeedleThreeAdjust.cpp" />
+    <ClCompile Include="DlgNeedleTwo.cpp" />
+    <ClCompile Include="DlgNeedleTwoAdjust.cpp" />
+    <ClCompile Include="DlgPadDetect.cpp" />
+    <ClCompile Include="DlgPattern.cpp" />
+    <ClCompile Include="DlgPosInfo.cpp" />
+    <ClCompile Include="DlgPrompt.cpp" />
+    <ClCompile Include="DlgProudSet.cpp" />
+    <ClCompile Include="DlgRCD.cpp" />
+    <ClCompile Include="DlgRepair.cpp" />
+    <ClCompile Include="DlgRunInfo.cpp" />
+    <ClCompile Include="DlgSetMark.cpp" />
+    <ClCompile Include="DlgSetPosition.cpp" />
+    <ClCompile Include="DlgURLPrompt.cpp" />
+    <ClCompile Include="DlgValveHeat.cpp" />
+    <ClCompile Include="EncryptOp.cpp" />
+    <ClCompile Include="Function.cpp" />
+    <ClCompile Include="GTS400Ex.cpp" />
+    <ClCompile Include="ImgMarkGeoSet.cpp" />
+    <ClCompile Include="ImgStatic.cpp" />
+    <ClCompile Include="JogButton.cpp" />
+    <ClCompile Include="KShvdh.cpp" />
+    <ClCompile Include="LogFile.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MilApp.cpp" />
+    <ClCompile Include="MyButton.cpp" />
+    <ClCompile Include="OutputWnd.cpp" />
+    <ClCompile Include="PageFactory.cpp" />
+    <ClCompile Include="PagePLC.cpp" />
+    <ClCompile Include="PointGreyCam.cpp" />
+    <ClCompile Include="PropertiesWnd.cpp" />
+    <ClCompile Include="SerialPort.cpp" />
+    <ClCompile Include="SocketUdp.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StsStatic.cpp" />
+    <ClCompile Include="TimeUtil.cpp" />
+    <ClCompile Include="Ts_DhCamera.cpp" />
+    <ClCompile Include="TSCtrlSys.cpp" />
+    <ClCompile Include="TSCtrlSysDoc.cpp" />
+    <ClCompile Include="TSCtrlSysView.cpp" />
+    <ClCompile Include="UserManage.cpp" />
+    <ClCompile Include="UserRegister.cpp" />
+    <ClCompile Include="V9Control.cpp" />
+    <ClCompile Include="V9Param.cpp" />
+    <ClCompile Include="XPButton.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaslerCamera.h" />
+    <ClInclude Include="CameraConfiguration.h" />
+    <ClInclude Include="CarmAVT.h" />
+    <ClInclude Include="CmdRun.h" />
+    <ClInclude Include="ColorButton.h" />
+    <ClInclude Include="ComPort.h" />
+    <ClInclude Include="convert.h" />
+    <ClInclude Include="defineProject.h" />
+    <ClInclude Include="DHCamera.h" />
+    <ClInclude Include="DlgAlignNeedle.h" />
+    <ClInclude Include="DlgAutoAlign.h" />
+    <ClInclude Include="DlgAutoNeedle.h" />
+    <ClInclude Include="DlgBlobSet.h" />
+    <ClInclude Include="DlgCameraAdj.h" />
+    <ClInclude Include="DlgCameraLaser.h" />
+    <ClInclude Include="DlgConfigure.h" />
+    <ClInclude Include="DlgCtrl.h" />
+    <ClInclude Include="DlgCustom.h" />
+    <ClInclude Include="DlgDebugHeight.h" />
+    <ClInclude Include="DlgDebugNeedle.h" />
+    <ClInclude Include="DlgDetectBase.h" />
+    <ClInclude Include="DlgDetectCalib.h" />
+    <ClInclude Include="DlgDownCam.h" />
+    <ClInclude Include="DlgHeight.h" />
+    <ClInclude Include="DlgHeightCalib.h" />
+    <ClInclude Include="DlgHeightPosition.h" />
+    <ClInclude Include="DlgImagePosition.h" />
+    <ClInclude Include="DlgIOCtrl.h" />
+    <ClInclude Include="DlgLabel.h" />
+    <ClInclude Include="DlgLogin.h" />
+    <ClInclude Include="DlgManualAlign.h" />
+    <ClInclude Include="DlgMarkSet.h" />
+    <ClInclude Include="DlgMaterialCode.h" />
+    <ClInclude Include="DlgNeedle.h" />
+    <ClInclude Include="DlgNeedleAdjust.h" />
+    <ClInclude Include="DlgNeedleCamera.h" />
+    <ClInclude Include="DlgNeedleOne.h" />
+    <ClInclude Include="DlgNeedleOneAdjust.h" />
+    <ClInclude Include="DlgNeedleThree.h" />
+    <ClInclude Include="DlgNeedleThreeAdjust.h" />
+    <ClInclude Include="DlgNeedleTwo.h" />
+    <ClInclude Include="DlgNeedleTwoAdjust.h" />
+    <ClInclude Include="DlgPadDetect.h" />
+    <ClInclude Include="DlgPattern.h" />
+    <ClInclude Include="DlgPosInfo.h" />
+    <ClInclude Include="DlgPrompt.h" />
+    <ClInclude Include="DlgProudSet.h" />
+    <ClInclude Include="DlgRCD.h" />
+    <ClInclude Include="DlgRepair.h" />
+    <ClInclude Include="DlgRunInfo.h" />
+    <ClInclude Include="DlgSetMark.h" />
+    <ClInclude Include="DlgSetPosition.h" />
+    <ClInclude Include="DlgURLPrompt.h" />
+    <ClInclude Include="DlgValveHeat.h" />
+    <ClInclude Include="EncryptOp.h" />
+    <ClInclude Include="Function.h" />
+    <ClInclude Include="GTS400Ex.h" />
+    <ClInclude Include="ImgMarkGeoSet.h" />
+    <ClInclude Include="ImgStatic.h" />
+    <ClInclude Include="JogButton.h" />
+    <ClInclude Include="KSColorDef.h" />
+    <ClInclude Include="KShvdh.h" />
+    <ClInclude Include="LogFile.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MilApp.h" />
+    <ClInclude Include="MyButton.h" />
+    <ClInclude Include="OutputWnd.h" />
+    <ClInclude Include="PageFactory.h" />
+    <ClInclude Include="PagePLC.h" />
+    <ClInclude Include="paramdef.h" />
+    <ClInclude Include="PointGreyCam.h" />
+    <ClInclude Include="PropertiesWnd.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RFIDPublic.h" />
+    <ClInclude Include="SerialPort.h" />
+    <ClInclude Include="SocketUdp.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StsStatic.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TimeUtil.h" />
+    <ClInclude Include="Ts_DhCamera.h" />
+    <ClInclude Include="TSCtrlSys.h" />
+    <ClInclude Include="TSCtrlSysDoc.h" />
+    <ClInclude Include="TSCtrlSysView.h" />
+    <ClInclude Include="UserManage.h" />
+    <ClInclude Include="UserRegister.h" />
+    <ClInclude Include="V9Control.h" />
+    <ClInclude Include="V9Param.h" />
+    <ClInclude Include="XPButton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\bitmap2.bmp" />
+    <None Include="res\bmp00001.bmp" />
+    <None Include="res\bmp00002.bmp" />
+    <None Include="res\bmp00003.bmp" />
+    <None Include="res\bmp00004.bmp" />
+    <None Include="res\f.bmp" />
+    <None Include="res\f1.bmp" />
+    <None Include="res\HA.bmp" />
+    <None Include="res\HB.bmp" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\mainfram.bmp" />
+    <None Include="res\nav_large.bmp" />
+    <None Include="res\nav_large_hc.bmp" />
+    <None Include="res\output_wnd.ico" />
+    <None Include="res\output_wnd_hc.ico" />
+    <None Include="res\pages.bmp" />
+    <None Include="res\pages_hc.bmp" />
+    <None Include="res\pages_small.bmp" />
+    <None Include="res\pages_small_hc.bmp" />
+    <None Include="res\properties.bmp" />
+    <None Include="res\properties_hc.bmp" />
+    <None Include="res\properties_wnd.ico" />
+    <None Include="res\properties_wnd_hc.ico" />
+    <None Include="res\sensorOff.bmp" />
+    <None Include="res\sensorOn.bmp" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="..\..\..\4-16\TSCtrlSys-Image--331\TSCtrlSys\res\Toolbar256.bmp" />
+    <None Include="..\..\..\..\FAD9000\FAD9000代码\4-28\TSCtrlSys-Image--331\TSCtrlSys\res\Toolbar256.bmp" />
+    <None Include="res\Toolbar256.bmp" />
+    <None Include="..\..\..\4-28\TSCtrlSys-Image--331\TSCtrlSys\res\Toolbar256.bmp" />
+    <None Include="res\TSCtrlSys.ico" />
+    <None Include="res\TSCtrlSys.rc2" />
+    <None Include="res\TSCtrlSysDoc.ico" />
+    <None Include="UserImages.bmp" />
+    <None Include="ReadMe.txt" />
+    <None Include="TSCtrlSys.reg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TSCtrlSys.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="res\XPStyle.manifest" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="TSCtrlSys.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
