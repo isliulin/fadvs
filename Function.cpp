@@ -34,7 +34,6 @@ CString CFunction::GetVerion()
 void CFunction::DoEvents()
 {
 	MSG msg;
-
 	// Process existing messages in the application's message queue.
 	// When the queue is empty, do clean up and return.
 	while (::PeekMessage(&msg,NULL,0,0,PM_NOREMOVE))
